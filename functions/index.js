@@ -116,7 +116,6 @@ app.delete("/api/delete/:id", (req, res) => {
         try {
             const reqDoc = db.collection("usersDetails").doc(req.params.id)
             await reqDoc.delete();
-            
 
             return res.status(200).send({ status: 'success', msg: "Data Deleted" });
         } catch (error) {
